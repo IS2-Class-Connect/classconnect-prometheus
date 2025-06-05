@@ -1,6 +1,5 @@
 global:
   scrape_interval: 15s
-  retention: 2d
 
 scrape_configs:
   - job_name: 'users'
