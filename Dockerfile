@@ -1,4 +1,5 @@
 FROM ubuntu:latest as builder
+RUN apt-get update && apt-get install -y gettext-base
 
 FROM prom/prometheus
 WORKDIR /etc/prometheus
