@@ -1,5 +1,3 @@
-FROM alpine:latest as builder
-
 FROM prom/prometheus
 WORKDIR /etc/prometheus
 
