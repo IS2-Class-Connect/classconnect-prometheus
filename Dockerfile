@@ -1,5 +1,10 @@
 FROM prom/prometheus
 
+# Install gettext for envsubst
+USER root
+RUN apk add --no-cache gettext
+USER nobody
+
 WORKDIR /etc/prometheus
 
 COPY prometheus.yml.template .
