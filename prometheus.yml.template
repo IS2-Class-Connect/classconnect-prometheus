@@ -7,16 +7,16 @@ scrape_configs:
     metrics_path: '/users/metrics'
     scheme: https
     static_configs:
-      - targets: ['${USERS_DOMAIN}']
+      - targets: ['$USERS_DOMAIN']
 
   - job_name: 'education'
     metrics_path: '/education/metrics'
     scheme: https
     static_configs:
-      - targets: ['${EDUCATION_DOMAIN}']
+      - targets: ['$EDUCATION_DOMAIN']
 
   - job_name: 'admins'
     metrics_path: '/admins/metrics'
     scheme: https
     static_configs:
-      - targets: ['${ADMINS_DOMAIN}']
+      - targets: ['$ADMINS_DOMAIN']

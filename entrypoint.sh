@@ -19,7 +19,11 @@ if [ $missing_vars -ne 0 ]; then
 fi
 
 echo "Generating config file"
-envsubst < /etc/prometheus/prometheus.yml.template > /etc/prometheus/prometheus.yml
+sed \
+  -e "s/\$USERS_DOMAIN/$USERS_DOMAIN/g" \
+  -e "s/\$EDUCATION_DOMAIN/$EDUCATION_DOMAIN/g" \
+  -e "s/\$ADMINS_DOMAIN/$ADMINS_DOMAIN/g" \
+  /etc/prometheus/prometheus.yml.template > /etc/prometheus/prometheus.yml
 
 # Validate config file
 if ! promtool check config /etc/prometheus/prometheus.yml 2>&1; then

@@ -1,10 +1,8 @@
-FROM ubuntu:latest as builder
-RUN apt-get update && apt-get install -y gettext-base
+FROM alpine:latest as builder
 
 FROM prom/prometheus
 WORKDIR /etc/prometheus
 
-COPY --from=builder /usr/bin/envsubst /usr/bin/envsubst
 COPY prometheus.yml.template .
 COPY --chmod=0755 entrypoint.sh .
 
