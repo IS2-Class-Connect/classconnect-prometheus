@@ -1,6 +1,4 @@
-FROM alpine:latest as builder
-RUN apk add --no-cache gettext
-COPY prometheus.yml.template .
+FROM ubuntu:latest as builder
 
 FROM prom/prometheus
 WORKDIR /etc/prometheus
