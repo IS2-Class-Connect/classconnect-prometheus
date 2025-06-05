@@ -5,11 +5,12 @@ echo "Validating environment variables"
 missing_vars=0
 REQUIRED_VARS="USERS_DOMAIN EDUCATION_DOMAIN ADMINS_DOMAIN"
 for var in $REQUIRED_VARS; do
+  eval "value=\$$var"
   if [ -z "${!var}" ]; then
     echo "✗ $var (not set)"
     missing_vars=1
   else
-    echo "✓ $var=${!var}"
+    echo "✓ $var=$value"
   fi
 done
 
