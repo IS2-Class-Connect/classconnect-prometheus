@@ -1,0 +1,5 @@
+{
+  "mounts": {
+    "prometheus-data": "/prometheus"
+  }
+}

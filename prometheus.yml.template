@@ -1,0 +1,22 @@
+global:
+  scrape_interval: 15s
+  retention: 15d
+
+scrape_configs:
+  - job_name: 'users'
+    metrics_path: '/users/metrics'
+    scheme: https
+    static_configs:
+      - targets: ['${USERS_DOMAIN}']
+
+  - job_name: 'education'
+    metrics_path: '/education/metrics'
+    scheme: https
+    static_configs:
+      - targets: ['${EDUCATION_DOMAIN}']
+
+  - job_name: 'admins'
+    metrics_path: '/admins/metrics'
+    scheme: https
+    static_configs:
+      - targets: ['${ADMINS_DOMAIN}']
