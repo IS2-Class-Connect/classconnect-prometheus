@@ -1,7 +1,5 @@
 # Prometheus Monitoring Service
 
-![Prometheus Logo](https://prometheus.io/assets/prometheus_logo_grey.svg)
-
 A lightweight Prometheus deployment configured for Railway with persistent storage.
 
 ## Features
