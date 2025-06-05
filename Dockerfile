@@ -2,7 +2,7 @@ FROM prom/prometheus
 
 # Install gettext for envsubst
 USER root
-RUN apk add --no-cache gettext
+RUN microdnf install -y gettext && microdnf clean all
 USER nobody
 
 WORKDIR /etc/prometheus
