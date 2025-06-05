@@ -3,7 +3,7 @@ FROM prom/prometheus
 WORKDIR /etc/prometheus
 
 COPY prometheus.yml.template .
-COPY entrypoint.sh .
+COPY --chmod=0755 entrypoint.sh .
 
 RUN chmod +x entrypoint.sh
 
