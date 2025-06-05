@@ -1,4 +1,4 @@
-FROM prom/prometheusFROM alpine:latest as builder
+FROM alpine:latest as builder
 RUN apk add --no-cache gettext
 COPY prometheus.yml.template .
 
